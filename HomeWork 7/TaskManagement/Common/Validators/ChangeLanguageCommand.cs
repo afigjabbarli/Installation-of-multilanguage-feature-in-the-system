@@ -11,11 +11,12 @@ namespace TaskManagement.Common.Validators
     {
         public void Handle()
         {
+            Console.WriteLine();
             Console.WriteLine("Please choose one of the languages shown on the screen");
             Console.WriteLine();
             Console.WriteLine("Azerbaijan language(default)");
             Console.WriteLine("Russian language");
-            Console.WriteLine("English language");
+            Console.WriteLine("English language"); 
             Console.WriteLine("Exit the language menu");
             Console.WriteLine();
             while (true)
