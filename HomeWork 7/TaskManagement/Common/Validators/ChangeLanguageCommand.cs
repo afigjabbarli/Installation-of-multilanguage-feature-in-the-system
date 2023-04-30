@@ -30,7 +30,7 @@ namespace TaskManagement.Common.Validators
                 {
                   case "Azerbaijan language":
                         User.Language = CurrentLanguage.Default;
-                    break;
+                        return;
                   case "Russian language":
                         User.Language = CurrentLanguage.Russian;
                         return;

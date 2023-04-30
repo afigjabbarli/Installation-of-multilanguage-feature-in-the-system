@@ -6,6 +6,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using TaskManagement.Database.Models;
 using TaskManagement.Database.Repositories;
+using TaskManagement.Services;
 using TaskManagement.Utilities;
 
 namespace TaskManagement.Common.Validators
@@ -20,13 +21,16 @@ namespace TaskManagement.Common.Validators
         {
             while (true)
             {
-                Console.WriteLine("Pls admin add your new name : ");
+                string FirstName = "Zehmet olmasa istifadeçi adınızı daxil edin:";
+                
+                FirstName.TextTranslator();
                 string firstName = Console.ReadLine()!;
 
                 if (IsValidFirstName(firstName))
                     return firstName;
 
-                Console.WriteLine("Some information is not correnct");
+                string FirstNameInfo = "Siz sehv məlumat daxil etmisiniz. Yeniden daxil olun...";
+                FirstNameInfo.TextTranslator();
             }
         }
         protected virtual bool IsValidFirstName(string firstName)
@@ -46,13 +50,15 @@ namespace TaskManagement.Common.Validators
         {
             while (true)
             {
-                Console.WriteLine("Pls enter last name : ");
+                string LastName = "Zehmet olmasa soyadınızı daxil edin:";
+                LastName.TextTranslator();
                 string lastName = Console.ReadLine()!;
 
                 if (IsValidLastName(lastName))
                     return lastName;
 
-                Console.WriteLine("Some information is not correnct");
+                string LastNameInfo = "Siz sehv məlumat daxil etmisiniz. Yeniden daxil olun...";
+                LastNameInfo.TextTranslator();
             }
         }
         protected virtual bool IsValidLastName(string lastName)
@@ -71,16 +77,19 @@ namespace TaskManagement.Common.Validators
         {
             while (true)
             {
-                Console.WriteLine("Pls enter password : ");
+                string Password = "Zehmet olmasa shifrenizi daxil edin:";
+                Password.TextTranslator();
                 string password = Console.ReadLine()!;
 
-                Console.WriteLine("Pls enter confirm password : ");
+                string ConfirmPassword = "Zehmet olmasa tesdiq parolunu daxil edin:";
+                ConfirmPassword.TextTranslator();
                 string confirmPassword = Console.ReadLine()!;
 
                 if (password == confirmPassword)
                     return password;
 
-                Console.WriteLine("Some information is not correnct");
+                string PaswordInfo = "Siz sehv məlumat daxil etmisiniz. Yeniden daxil olun...";
+                PaswordInfo.TextTranslator();
             }
         }
 
@@ -93,7 +102,8 @@ namespace TaskManagement.Common.Validators
             while (true)
             {
 
-                Console.WriteLine("Pls enter email : ");
+                string Email = "Zehmet olmasa elektron pocht unvaninizi daxil edin:";
+                Email.TextTranslator();
                 string email = Console.ReadLine()!;
 
                 //Pattern for emails where receipecnt can be digit or letter and
@@ -103,13 +113,14 @@ namespace TaskManagement.Common.Validators
 
                 if (!regex.IsMatch(email))
                 {
-                    Console.WriteLine("You email shoud conta, ....");
+                    Console.WriteLine("You email should conta, ....");
                     continue;
                 }
 
                 if (IsEmailExists(email))
                 {
-                    Console.WriteLine("Email should be unique");
+                    string unigueEmail = "E-poçt unikal olmalıdır...";
+                    unigueEmail.TextTranslator();
                     continue;
                 }
 
