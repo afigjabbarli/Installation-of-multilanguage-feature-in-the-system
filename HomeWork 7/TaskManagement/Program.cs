@@ -1,7 +1,7 @@
-﻿using TaskManagement.Admin;
-using TaskManagement.Common;
+﻿using TaskManagement.Common;
 using TaskManagement.Common.Validators;
-using TaskManagement.Database;
+using TaskManagement.Contants;
+using TaskManagement.Services;
 
 namespace TaskManagement
 {
@@ -11,16 +11,25 @@ namespace TaskManagement
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Please choose one of the commands");
-            Console.WriteLine();
-            Console.WriteLine("/Register");
-            Console.WriteLine("/Login");
-            Console.WriteLine("/Update-language-preference");
-            Console.WriteLine("/Exit");
-            Console.WriteLine();
-            
+
             while (true)
             {
+            
+                string primaryCommands = "Zehmet olmasa, emrlerdən birini seçin";
+                primaryCommands.TextTranslator();
+                
+
+                Console.WriteLine();
+                string registr = "/Qeydiyyatdan keçin";
+                registr.TextTranslator();
+                string login = "/Daxil olun";
+                login.TextTranslator();
+                string usingLanguage = "/Dil seçimleri";
+                usingLanguage.TextTranslator();
+                string exit = "/Çıx";
+                exit.TextTranslator();
+                Console.WriteLine();
+
                 Console.Write("Command:"); string command = Console.ReadLine()!;
 
                 switch (command)
@@ -33,7 +42,7 @@ namespace TaskManagement
                         LoginCommand loginCommand = new LoginCommand();
                         loginCommand.Handle();
                         break;
-                    case "/Update-language-preference":
+                    case "/Dil seçimleri":
                         ChangeLanguageCommand changeLanguageCommand = new ChangeLanguageCommand();
                         changeLanguageCommand.Handle();
                         break;

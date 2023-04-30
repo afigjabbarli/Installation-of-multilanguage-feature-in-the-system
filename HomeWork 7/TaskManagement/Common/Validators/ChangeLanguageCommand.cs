@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
+using TaskManagement.Contants;
+using TaskManagement.Database.Models;
 
 namespace TaskManagement.Common.Validators
 {
-    public class ChangeLanguageCommand: ICommandHandler
+    public class ChangeLanguageCommand: ICommandHandler 
     {
         public void Handle()
         {
@@ -26,11 +29,14 @@ namespace TaskManagement.Common.Validators
                 switch (language)
                 {
                   case "Azerbaijan language":
+                        User.Language = CurrentLanguage.Default;
                     break;
                   case "Russian language":
-                    break;
+                        User.Language = CurrentLanguage.Russian;
+                        return;
                   case "English language":
-                    break;
+                        User.Language = CurrentLanguage.English;
+                        return;
                   case "Exit the language menu":
                     return;
                   default: Console.WriteLine("This language is not available in the system...");

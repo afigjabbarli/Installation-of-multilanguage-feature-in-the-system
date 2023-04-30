@@ -9,6 +9,7 @@ namespace TaskManagement.Database.Repositories
 {
     public class MessageRepository
     {
+        
         public List<Message> GetAllByReceiver(User receiver)
         {
             List<Message> messages = new List<Message>();
