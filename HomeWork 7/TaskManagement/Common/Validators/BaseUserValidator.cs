@@ -108,12 +108,13 @@ namespace TaskManagement.Common.Validators
 
                 //Pattern for emails where receipecnt can be digit or letter and
                 //domain should be code.edu.az
-                string pattern = "\"^[A-Z]{1}[a-z0-9]{10,30}@code\\.edu\\.az$\"gm";
+                string pattern = "\"^[A-Z]{1}[a-z0-9]{10,30}@code\\.edu\\.az$\"";
                 Regex regex = new Regex(pattern);
 
                 if (!regex.IsMatch(email))
                 {
-                    Console.WriteLine("You email should conta, ....");
+                    string trueEmail = "E-poçtunuz olmalıdır, ....";
+                    trueEmail.TextTranslator();
                     continue;
                 }
 

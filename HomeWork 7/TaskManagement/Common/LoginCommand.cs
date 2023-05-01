@@ -1,5 +1,6 @@
 ﻿using TaskManagement.Admin;
 using TaskManagement.Client;
+using TaskManagement.Common.Validators;
 using TaskManagement.Contants;
 using TaskManagement.Database;
 using TaskManagement.Database.Models;
@@ -13,11 +14,17 @@ namespace TaskManagement.Common
         public void Handle() //use alias
         {
             Console.WriteLine();
-            Console.Write("Please enter your email address:"); string email = Console.ReadLine()!;
-            Console.Write("Please enter your password:"); string password = Console.ReadLine()!;
+            string inputemail = "zehmet olmasa elektron pocht unvaninizi daxil edin:"; inputemail.TextTranslator();
+            string email = Console.ReadLine()!;
+
+            string inputpassword = "zehmet olmasa shifrenizi daxil edin:"; inputpassword.TextTranslator();
+            string password = Console.ReadLine()!;
             Console.WriteLine();
+            ClassicUserValidator userValidator = new ClassicUserValidator();
+            userValidator.GetAndValidateEmail();
+            userValidator.GetAndValidatePassword();
             UserRepository userRepository = new UserRepository();
-            List<User> users = userRepository.GetAll(); 
+            List<User> users = userRepository.GetAll();
 
             for (int i = 0; i < users.Count; i++)
             {
@@ -27,10 +34,11 @@ namespace TaskManagement.Common
                 {
                     if (user.IsBanned)
                     {
-                        Console.WriteLine("Your account is banned, you can't join");
+                        string banMessage = "Hesabınız qadağan edilib, siz qoşula bilməzsiniz";
+                        banMessage.TextTranslator();
                         return;
                     }
-                    
+
                     UserService.CurrentUser = user;
 
                     if (user.Role == UserRole.Admin)

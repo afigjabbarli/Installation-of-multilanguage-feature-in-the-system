@@ -42,32 +42,30 @@ namespace TaskManagement
                     switch (inputCommand)
                     {
                     case "/Qeydiyyatdan keçin":
-                        string registerCommand = "/Qeydiyyatdan keçin";
-                        registerCommand.TextTranslator();
+                        
                         RegisterCommand RegisterCommand = new RegisterCommand();
                         RegisterCommand.Handle();
                         break;
                     case "/Daxil olun":
-                        string loginCommand = "/Daxil olun";
-                        loginCommand.TextTranslator();  
+                        
                         LoginCommand LoginCommand = new LoginCommand();
                         LoginCommand.Handle();
                         break;
                     case "/Dil seçimleri":
-                        string changeLanguageCommand = "/Dil seçimleri";
-                        changeLanguageCommand.TextTranslator(); 
+                        
                         ChangeLanguageCommand ChangeLanguageCommand = new ChangeLanguageCommand();
                         ChangeLanguageCommand.Handle();
                             break; 
                     case "/Çıx":
-                        string exitCommand = "/Çıx";
-                        exitCommand.TextTranslator();
+                       
                         string byebye = "İstifade etdiyiniz üçün teşekkür edirik.Sagholun...";
                         byebye.TextTranslator();
                         
                         return;
                     default:
-                        Console.WriteLine("Invalid command, pls try again");
+                       
+                        string invalid = "Yanlış əmr, xahiş edirəm yenidən cəhd edin";
+                        invalid.TextTranslator();
                         break;
 
 
@@ -79,32 +77,29 @@ namespace TaskManagement
                     switch (inputCommand)
                     {
                         case "/Register":
-                            string registerCommand = "/Qeydiyyatdan keçin";
-                            registerCommand.TextTranslator();
+                           
                             RegisterCommand RegisterCommand = new RegisterCommand();
                             RegisterCommand.Handle();
                             break;
                         case "/Login":
-                            string loginCommand = "/Daxil olun";
-                            loginCommand.TextTranslator();
+                            
                             LoginCommand LoginCommand = new LoginCommand();
                             LoginCommand.Handle();
                             break;
                         case "/Update-language-preference":
-                            string changeLanguageCommand = "/Dil seçimleri";
-                            changeLanguageCommand.TextTranslator();
+                           
                             ChangeLanguageCommand ChangeLanguageCommand = new ChangeLanguageCommand();
                             ChangeLanguageCommand.Handle();
                             break;
                         case "/Exit":
-                            string exitCommand = "/Çıx";
-                            exitCommand.TextTranslator();
+                           
                             string byebye = "İstifadə etdiyiniz üçün təşəkkür edirik.Sagholun...";
                             byebye.TextTranslator();
 
                             return;
                         default:
-                            Console.WriteLine("Invalid command, pls try again");
+                            string invalid = "Yanlış əmr, xahiş edirəm yenidən cəhd edin";
+                            invalid.TextTranslator();
                             break;
 
                     }
@@ -115,34 +110,31 @@ namespace TaskManagement
                         switch (inputCommand)
                         {
                             case "/Pегистр":
-                                string registerCommand = "/Qeydiyyatdan keçin";
-                                registerCommand.TextTranslator();
+                                
                                 RegisterCommand RegisterCommand = new RegisterCommand();
                                 RegisterCommand.Handle();
                                 break;
                             case "/Bходить":
-                                string loginCommand = "/Daxil olun";
-                                loginCommand.TextTranslator();
+                               
                                 LoginCommand LoginCommand = new LoginCommand();
                                 LoginCommand.Handle();
                                 break;
                             case "/Языковые настройки":
-                                string changeLanguageCommand = "/Dil seçimleri";
-                                changeLanguageCommand.TextTranslator();
+                                
                                 ChangeLanguageCommand ChangeLanguageCommand = new ChangeLanguageCommand();
                                 ChangeLanguageCommand.Handle();
                                 break;
                             case "/Выход":
-                                string exitCommand = "/Çıx";
-                                exitCommand.TextTranslator();
+                                
                                 string byebye = "İstifadə etdiyiniz üçün təşəkkür edirik.Sagholun...";
                                 byebye.TextTranslator();
 
                                 return;
                             default:
-                                Console.WriteLine("Invalid command, pls try again");
+                                string invalid = "Yanlış əmr, xahiş edirəm yenidən cəhd edin";
+                                invalid.TextTranslator();
                                 break;
-
+                             
                         } 
 
 
